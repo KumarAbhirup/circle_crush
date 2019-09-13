@@ -74,12 +74,22 @@ function gamePlay() {
   })
 
   // Swipe Detector
-  if (!canEnd && balls.length > 0 && isMobile && swipe === 'left') {
-    balls[0].fire('left')
-  }
-  if (!canEnd && balls.length > 0 && isMobile && swipe === 'right') {
-    balls[0].fire('right')
-  }
+  hammer.on('swipe', event => {
+    if (!canEnd && balls.length > 0 && isMobile && event.direction === 4) {
+      balls[0].fire('right')
+    } else if (event.direction === 8) {
+      swipe = 'up'
+    } else if (event.direction === 16) {
+      swipe = 'down'
+    } else if (
+      !canEnd &&
+      balls.length > 0 &&
+      isMobile &&
+      event.direction === 2
+    ) {
+      balls[0].fire('left')
+    }
+  })
 
   const floatingTextSize = isMobileSize ? 2 : 4
 

@@ -91,6 +91,8 @@ let isMobile = false // check if it really is mobile
 let isMobileSize = false // check if the browser is mobile size
 let touching = false // Whether the user is currently touching/clicking
 
+let hammer // hammer.js
+
 // Load assets
 function preload() {
   // Load font from google fonts link provided in game settings
@@ -219,21 +221,9 @@ function setup() {
   leaderboardButton = new LeaderboardButton()
   endButton = new EndButton()
 
-  const hammer = new Hammer(document.body, { preventDefault: false })
+  hammer = new Hammer(document.body, { preventDefault: false })
   hammer.get('swipe').set({
     direction: Hammer.DIRECTION_ALL,
-  })
-
-  hammer.on('swipe', event => {
-    if (event.direction === 4) {
-      swipe = 'right'
-    } else if (event.direction === 8) {
-      swipe = 'up'
-    } else if (event.direction === 16) {
-      swipe = 'down'
-    } else if (event.direction === 2) {
-      swipe = 'left'
-    }
   })
 
   instantiate()
