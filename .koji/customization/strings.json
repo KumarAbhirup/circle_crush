@@ -8,7 +8,7 @@
     "mobile_instructions1": "Crush the circles with the wheels of their color!",
     "mobile_instructions2": "For the one that got no wheel, let it go!",
     "mobile_instructions3": "Swipe left/right to crush it in correct wheel!",
-    "lives": "4",
+    "lives": "3",
     "minimumScoreToSave": "3",
     "enableCursor": true,
     "enableTimer": true,
