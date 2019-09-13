@@ -42,6 +42,7 @@ let comboTexts = []
 
 // Images
 let imgWheels = []
+let imgBalls = []
 let imgLife
 let imgBackground
 
@@ -101,7 +102,13 @@ function preload() {
 
   // Load images
   imgWheels[0] = loadImage(Koji.config.images.wheelImage1)
+  imgBalls[0] = loadImage(Koji.config.images.ballImage1)
+
   imgWheels[1] = loadImage(Koji.config.images.wheelImage2)
+  imgBalls[1] = loadImage(Koji.config.images.ballImage2)
+
+  imgBalls[2] = loadImage(Koji.config.images.ballImage3)
+
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
   muteImage = loadImage(Koji.config.images.muteImage)
@@ -146,7 +153,7 @@ function instantiate() {
       y: height / 2,
     },
     { radius: objSize * wheelSize },
-    { shape: 'circle', color: '#FFFFFF', image: imgWheels[0], rotate: true }
+    { shape: 'circle', image: imgWheels[0], rotate: true }
   )
   wheels[1] = new GameObject(
     {
@@ -154,7 +161,7 @@ function instantiate() {
       y: height / 2,
     },
     { radius: objSize * wheelSize },
-    { shape: 'circle', color: '#FFFF00', image: imgWheels[1], rotate: true }
+    { shape: 'circle', image: imgWheels[1], rotate: true }
   )
 }
 
