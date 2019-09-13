@@ -27,6 +27,7 @@ function gamePlay() {
   ;(() => {
     ballTimer += 1 / frameRate()
     if (ballTimer >= 1.5) {
+      const ballType = random(ballTypes)
       balls.push(
         new Ball(
           {
@@ -34,7 +35,12 @@ function gamePlay() {
             y: 0 - objSize * 2,
           },
           { radius: objSize * ballSize },
-          { shape: 'circle', image: random(ballTypes).image, rotate: true }
+          {
+            shape: 'circle',
+            image: ballType.image,
+            rotate: true,
+            type: ballType.type,
+          }
         )
       )
 
@@ -59,7 +65,43 @@ function gamePlay() {
     firedBall.update()
   })
 
-  console.log(firedBalls)
+  // Collision check
+  wheels.forEach(wheel => {
+    firedBalls.forEach(firedBall => {
+      if (
+        wheel.didTouch({
+          sizing: { radius: firedBall.sizing.radius },
+          body: firedBall.body,
+        })
+      ) {
+        if (wheel.settings.type === firedBall.settings.type) {
+          addScore(
+            1,
+            imgLife,
+            {
+              x: firedBall.body.position.x,
+              y: firedBall.body.position.y,
+            },
+            10,
+            { floatingText: false }
+          )
+        } else {
+          firedBalls.pop()
+
+          particlesEffect(
+            imgBalls[firedBall.settings.type],
+            {
+              x: firedBall.body.position.x,
+              y: firedBall.body.position.y,
+            },
+            20
+          )
+
+          loseLife()
+        }
+      }
+    })
+  })
 
   // Score draw
   const scoreX = width - objSize / 2

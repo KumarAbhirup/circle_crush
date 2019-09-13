@@ -158,7 +158,7 @@ function instantiate() {
       y: height / 2,
     },
     { radius: objSize * wheelSize },
-    { shape: 'circle', image: imgWheels[0], rotate: true }
+    { shape: 'circle', image: imgWheels[0], rotate: true, type: 0 }
   )
   wheels[1] = new GameObject(
     {
@@ -166,7 +166,7 @@ function instantiate() {
       y: height / 2,
     },
     { radius: objSize * wheelSize },
-    { shape: 'circle', image: imgWheels[1], rotate: true }
+    { shape: 'circle', image: imgWheels[1], rotate: true, type: 1 }
   )
 
   ballTypes = [
@@ -314,6 +314,12 @@ function cleanup() {
       balls.splice(i, 1)
     }
   }
+
+  for (let i = 0; i < firedBalls.length; i += 1) {
+    if (firedBalls[i].removable) {
+      firedBalls.splice(i, 1)
+    }
+  }
 }
 
 // Call this when a lose life event should trigger
@@ -404,11 +410,19 @@ function keyPressed() {
 
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
-    if (balls.length > 0 && (keyCode === LEFT_ARROW || key === 'a')) {
+    if (
+      !canEnd &&
+      balls.length > 0 &&
+      (keyCode === LEFT_ARROW || key === 'a')
+    ) {
       balls[0].fire('left')
     }
 
-    if (balls.length > 0 && (keyCode === RIGHT_ARROW || key === 'd')) {
+    if (
+      !canEnd &&
+      balls.length > 0 &&
+      (keyCode === RIGHT_ARROW || key === 'd')
+    ) {
       balls[0].fire('right')
     }
   }
