@@ -53,6 +53,14 @@ function gamePlay() {
     ball.update()
   })
 
+  firedBalls.forEach(firedBall => {
+    firedBall.show()
+    firedBall.project()
+    firedBall.update()
+  })
+
+  console.log(firedBalls)
+
   // Score draw
   const scoreX = width - objSize / 2
   const scoreY = objSize / 3

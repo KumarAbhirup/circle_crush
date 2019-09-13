@@ -14,6 +14,8 @@ class Ball extends GameObject {
 
   maxVelocity = 20
 
+  fireDirection = null
+
   update() {
     this.rotate()
 
@@ -28,15 +30,18 @@ class Ball extends GameObject {
    * @param {string | null} direction - 'left', 'right' or null
    */
   fire(direction = null) {
-    // if (direction === 'left') {
-    //   this.body.position.x -= 20
-    // }
-
-    // if (direction === 'right') {
-    //   this.body.position.x += 20
-    // }
-
-    firedBalls.push({ ball: this, direction })
+    this.fireDirection = direction
+    firedBalls.push(this)
     balls.splice(0, 1) // Remove first ball
+  }
+
+  // Here's how the fire is projected
+  project() {
+    if (this.fireDirection === 'left') {
+      this.body.position.x -= 20
+    }
+    if (this.fireDirection === 'right') {
+      this.body.position.x += 20
+    }
   }
 }
