@@ -3,6 +3,8 @@
   global
   GameObject
   Smooth
+  firedBalls
+  balls
 */
 
 class Ball extends GameObject {
@@ -19,5 +21,22 @@ class Ball extends GameObject {
     this.body.position.y += this.velocity
 
     if (this.wentOutOfFrame()) this.removable = true
+  }
+
+  /**
+   * Fire the ball towards one wheel
+   * @param {string | null} direction - 'left', 'right' or null
+   */
+  fire(direction = null) {
+    // if (direction === 'left') {
+    //   this.body.position.x -= 20
+    // }
+
+    // if (direction === 'right') {
+    //   this.body.position.x += 20
+    // }
+
+    firedBalls.push({ ball: this, direction })
+    balls.splice(0, 1) // Remove first ball
   }
 }

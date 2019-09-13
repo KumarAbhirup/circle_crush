@@ -23,6 +23,7 @@ let balls = []
 
 // Game Stuffs (READ-N-WRITE)
 let ballTypes = []
+let firedBalls = []
 let wheelSize
 let ballSize
 
@@ -403,6 +404,13 @@ function keyPressed() {
 
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
+    if (balls.length > 0 && (keyCode === LEFT_ARROW || key === 'a')) {
+      balls[0].fire('left')
+    }
+
+    if (balls.length > 0 && (keyCode === RIGHT_ARROW || key === 'd')) {
+      balls[0].fire('right')
+    }
   }
 }
 

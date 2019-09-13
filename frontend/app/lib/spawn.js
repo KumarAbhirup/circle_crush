@@ -36,7 +36,7 @@ function drawTimer() {
 
   let timerText = `${timerMinutes}:${timerSeconds}`
   const timerSize = objSize * 1.2
-  const x = timerSize * 1.6
+  let x = timerSize * 1.6
   let y = height - timerSize * 1.2
 
   textAlign(CENTER, TOP)
@@ -49,6 +49,7 @@ function drawTimer() {
       if (sndEnd) sndEnd.play()
     }
 
+    x = width / 2
     y = height / 2
 
     fill(Koji.config.colors.gameOverRectangleColor)
