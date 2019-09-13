@@ -90,6 +90,9 @@ let isMobile = false // check if it really is mobile
 let isMobileSize = false // check if the browser is mobile size
 let touching = false // Whether the user is currently touching/clicking
 
+let touchStartedMouseX
+let touchEndedMouseX
+
 // Load assets
 function preload() {
   // Load font from google fonts link provided in game settings
@@ -351,6 +354,7 @@ function touchStarted() {
   if (!gameOver && !gameBeginning) {
     // InGame
     touching = true
+    touchStartedMouseX = mouseX
 
     if (canEnd) {
       gameOver = true
@@ -371,6 +375,7 @@ function touchEnded() {
   }
 
   touching = false
+  touchEndedMouseX = mouseX
 }
 
 // Key pressed and released

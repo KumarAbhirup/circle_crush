@@ -29,6 +29,9 @@ function gamePlay() {
     ballTimer += 1 / frameRate()
     if (ballTimer >= 1.5) {
       const ballType = random(ballTypes)
+
+      touchStartedMouseX = mouseX
+      touchEndedMouseX = mouseX
       balls.push(
         new Ball(
           {
@@ -71,6 +74,25 @@ function gamePlay() {
     particledBall.project()
     particledBall.update()
   })
+
+  // Swipe Detector
+  if (
+    !canEnd &&
+    balls.length > 0 &&
+    isMobile &&
+    touchStartedMouseX > touchEndedMouseX
+  ) {
+    balls[0].fire('left')
+  }
+
+  if (
+    !canEnd &&
+    balls.length > 0 &&
+    isMobile &&
+    touchStartedMouseX < touchEndedMouseX
+  ) {
+    balls[0].fire('right')
+  }
 
   const floatingTextSize = isMobileSize ? 2 : 4
 
