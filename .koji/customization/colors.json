@@ -17,7 +17,7 @@
     "lifeColor": "#d54b8c",
     "floatingTextColor": "#ffff00",
     "negativeFloatingTextColor": "#ffffff",
-    "timerText": "#ffff00",
+    "timerText": "#ffffff",
     "gameOverRectangleColor": "#222222"
   },
   "@@editor": [{

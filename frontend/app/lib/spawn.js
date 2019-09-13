@@ -35,9 +35,9 @@ function drawTimer() {
   }
 
   let timerText = `${timerMinutes}:${timerSeconds}`
-  const timerSize = objSize * 1.5
-  const x = width / 2
-  let y = timerSize
+  const timerSize = objSize * 1.2
+  const x = timerSize * 1.6
+  let y = height - timerSize * 1.2
 
   textAlign(CENTER, TOP)
 
