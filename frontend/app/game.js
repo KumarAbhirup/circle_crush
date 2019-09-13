@@ -97,7 +97,11 @@ function gamePlay() {
             20
           )
 
-          loseLife()
+          if (lives === 1) {
+            setTimeout(loseLife, 1000)
+          } else {
+            loseLife()
+          }
         }
       }
     })
