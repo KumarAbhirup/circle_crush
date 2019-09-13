@@ -27,7 +27,7 @@ let firedBalls = []
 let particledBalls = []
 let wheelSize
 let ballSize
-let swipe = ''
+let swipe = null
 
 // Buttons
 let playButton
