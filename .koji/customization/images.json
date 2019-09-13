@@ -41,6 +41,24 @@
         "type": "image"
       },
       {
+        "key": "ballImage1",
+        "name": "Ball Image 1",
+        "description": "Ideal size: 100x100",
+        "type": "image"
+      },
+      {
+        "key": "ballImage2",
+        "name": "Ball Image 2",
+        "description": "Ideal size: 100x100",
+        "type": "image"
+      },
+      {
+        "key": "ballImage3",
+        "name": "Ball Image 3",
+        "description": "Ideal size: 100x100",
+        "type": "image"
+      },
+      {
         "key": "soundImage",
         "name": "Sound Icon",
         "description": "Ideal size: 32x32",
