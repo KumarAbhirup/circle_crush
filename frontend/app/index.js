@@ -27,6 +27,7 @@ let firedBalls = []
 let particledBalls = []
 let wheelSize
 let ballSize
+let swipe = ''
 
 // Buttons
 let playButton
@@ -89,9 +90,6 @@ const gameSize = 18
 let isMobile = false // check if it really is mobile
 let isMobileSize = false // check if the browser is mobile size
 let touching = false // Whether the user is currently touching/clicking
-
-let touchStartedMouseX
-let touchEndedMouseX
 
 // Load assets
 function preload() {
@@ -220,6 +218,23 @@ function setup() {
   soundButton = new SoundButton()
   leaderboardButton = new LeaderboardButton()
   endButton = new EndButton()
+
+  const hammer = new Hammer(document.body, { preventDefault: false })
+  hammer.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL,
+  })
+
+  hammer.on('swipe', event => {
+    if (event.direction === 4) {
+      swipe = 'right'
+    } else if (event.direction === 8) {
+      swipe = 'up'
+    } else if (event.direction === 16) {
+      swipe = 'down'
+    } else if (event.direction === 2) {
+      swipe = 'left'
+    }
+  })
 
   instantiate()
 
@@ -354,7 +369,6 @@ function touchStarted() {
   if (!gameOver && !gameBeginning) {
     // InGame
     touching = true
-    touchStartedMouseX = mouseX
 
     if (canEnd) {
       gameOver = true
@@ -375,7 +389,6 @@ function touchEnded() {
   }
 
   touching = false
-  touchEndedMouseX = mouseX
 }
 
 // Key pressed and released

@@ -27,11 +27,9 @@ function gamePlay() {
   // Spawn a ball every second
   ;(() => {
     ballTimer += 1 / frameRate()
-    if (ballTimer >= 1.5) {
+    if (ballTimer >= 1.25) {
       const ballType = random(ballTypes)
 
-      touchStartedMouseX = mouseX
-      touchEndedMouseX = mouseX
       balls.push(
         new Ball(
           {
@@ -76,21 +74,10 @@ function gamePlay() {
   })
 
   // Swipe Detector
-  if (
-    !canEnd &&
-    balls.length > 0 &&
-    isMobile &&
-    touchStartedMouseX > touchEndedMouseX
-  ) {
+  if (!canEnd && balls.length > 0 && isMobile && swipe === 'left') {
     balls[0].fire('left')
   }
-
-  if (
-    !canEnd &&
-    balls.length > 0 &&
-    isMobile &&
-    touchStartedMouseX < touchEndedMouseX
-  ) {
+  if (!canEnd && balls.length > 0 && isMobile && swipe === 'right') {
     balls[0].fire('right')
   }
 
@@ -178,7 +165,7 @@ function gamePlay() {
               x: particledBall.body.position.x,
               y: particledBall.body.position.y,
             },
-            10
+            2
           )
         }
       }
