@@ -22,6 +22,7 @@ let wheels = []
 let balls = []
 
 // Game Stuffs (READ-N-WRITE)
+let wheelSize
 
 // Buttons
 let playButton
@@ -40,6 +41,7 @@ let score = 0
 let comboTexts = []
 
 // Images
+let imgWheels = []
 let imgLife
 let imgBackground
 
@@ -98,6 +100,8 @@ function preload() {
   }
 
   // Load images
+  imgWheels[0] = loadImage(Koji.config.images.wheelImage1)
+  imgWheels[1] = loadImage(Koji.config.images.wheelImage2)
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
   muteImage = loadImage(Koji.config.images.muteImage)
@@ -135,13 +139,22 @@ function preload() {
 
 // Instantiate objects here
 function instantiate() {
+  wheelSize = isMobileSize ? 4 : 7
   wheels[0] = new GameObject(
     {
-      x: 300,
-      y: 300,
+      x: 0,
+      y: height / 2,
     },
-    { radius: 30 },
-    { shape: 'circle', color: '#FFFFFF' }
+    { radius: objSize * wheelSize },
+    { shape: 'circle', color: '#FFFFFF', image: imgWheels[0], rotate: true }
+  )
+  wheels[1] = new GameObject(
+    {
+      x: width,
+      y: height / 2,
+    },
+    { radius: objSize * wheelSize },
+    { shape: 'circle', color: '#FFFF00', image: imgWheels[1], rotate: true }
   )
 }
 
@@ -237,6 +250,13 @@ function windowResized() {
   soundButton.size = createVector(objSize, objSize)
 
   isMobileSize = detectMobileSize()
+
+  // Size and Position settings
+  wheelSize = isMobileSize ? 4 : 7
+  wheels[0].body.position.x = 0
+  wheels[0].sizing.radius = objSize * wheelSize
+  wheels[1].body.position.x = width
+  wheels[1].sizing.radius = objSize * wheelSize
 
   // handleResize() // 👈 create this function for advanced resize handling
 }

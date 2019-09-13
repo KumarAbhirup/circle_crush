@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
@@ -61,6 +62,8 @@ class GameObject {
       this.body.movable = false
     }
   }
+
+  rotateStartAt = 0
 
   /**
    * @description check for collision of this object to any other object
@@ -219,7 +222,7 @@ class GameObject {
   }
 
   // Rotate the object
-  rotate(degrees = 0) {
+  rotate(degrees = (this.rotateStartAt += 0.1)) {
     this.body.angle = degrees
   }
 

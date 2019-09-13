@@ -24,7 +24,10 @@ function gamePlay() {
   }
 
   // InGame UI
-  wheels[0].show()
+  wheels.forEach(wheel => {
+    wheel.show()
+    wheel.rotate()
+  })
 
   // Score draw
   const scoreX = width - objSize / 2

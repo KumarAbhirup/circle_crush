@@ -1,5 +1,7 @@
 {
   "images": {
+    "wheelImage1": "https://i.imgur.com/Ptuivh6.png",
+    "wheelImage2": "https://i.ibb.co/gdrwB1r/Ptuivh6.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
     "lifeIcon": "https://i.imgur.com/39e9e4h.png",
@@ -24,6 +26,18 @@
     "icon": "💪🏻",
     "source": "images.json",
     "fields": [{
+        "key": "wheelImage1",
+        "name": "Wheel Image 1",
+        "description": "Ideal size: 100x100",
+        "type": "image"
+      },
+      {
+        "key": "wheelImage2",
+        "name": "Wheel Image 2",
+        "description": "Ideal size: 100x100",
+        "type": "image"
+      },
+      {
         "key": "soundImage",
         "name": "Sound Icon",
         "description": "Ideal size: 32x32",
