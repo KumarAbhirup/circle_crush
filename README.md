@@ -1,4 +1,4 @@
-# `📦 p5.js Scaffold`
+# `📦 Circle Crush Game`
 
 Start your day with some p5.js juice!
 
