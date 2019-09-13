@@ -24,6 +24,7 @@ function gamePlay() {
   }
 
   // InGame UI
+  wheels[0].show()
 
   // Score draw
   const scoreX = width - objSize / 2

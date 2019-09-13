@@ -18,6 +18,8 @@ let floatingTexts = []
 let particles = []
 
 // Game Objects (READ-ONLY)
+let wheels = []
+let balls = []
 
 // Game Stuffs (READ-N-WRITE)
 
@@ -132,7 +134,16 @@ function preload() {
 }
 
 // Instantiate objects here
-function instantiate() {}
+function instantiate() {
+  wheels[0] = new GameObject(
+    {
+      x: 300,
+      y: 300,
+    },
+    { radius: 30 },
+    { shape: 'circle', color: '#FFFFFF' }
+  )
+}
 
 // Setup your props
 function setup() {
