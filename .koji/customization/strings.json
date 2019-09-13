@@ -18,6 +18,7 @@
     "endButtonText": "END GAME",
     "gameOverText": "GAME OVER",
     "gameStartedFloatingText": "Swipe the balls!",
+    "wrongCrushText": "Ahh! Bad move.",
     "comboText": "AWESOME 👏, NEAT 👌, GREAT 👏, FANTASTIC 💌, WOW ❤️, AMAZING 😍",
     "emailInputEnabled": false,
     "scoreText": "Score:",
@@ -129,6 +130,12 @@
         "key": "gameStartedFloatingText",
         "name": "Game Started Text",
         "description": "The floating text that appears after game starts.",
+        "type": "text"
+      },
+      {
+        "key": "wrongCrushText",
+        "name": "Wrong match/crush text",
+        "description": "The floating text that appears after crushing ball to wrong wheel.",
         "type": "text"
       },
       {

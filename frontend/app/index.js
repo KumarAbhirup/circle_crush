@@ -24,6 +24,7 @@ let balls = []
 // Game Stuffs (READ-N-WRITE)
 let ballTypes = []
 let firedBalls = []
+let particledBalls = []
 let wheelSize
 let ballSize
 
@@ -444,6 +445,9 @@ function init() {
 
   floatingTexts = []
   particles = []
+  balls = []
+  firedBalls = []
+  wheels = []
 
   // Keep everyone at their original place
   instantiate()

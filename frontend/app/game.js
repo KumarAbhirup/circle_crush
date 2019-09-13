@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
@@ -65,6 +66,14 @@ function gamePlay() {
     firedBall.update()
   })
 
+  particledBalls.forEach(particledBall => {
+    particledBall.show()
+    particledBall.project()
+    particledBall.update()
+  })
+
+  const floatingTextSize = isMobileSize ? 2 : 4
+
   // Collision check
   wheels.forEach(wheel => {
     firedBalls.forEach(firedBall => {
@@ -75,6 +84,20 @@ function gamePlay() {
         })
       ) {
         if (wheel.settings.type === firedBall.settings.type) {
+          particledBalls.push(firedBall)
+
+          firedBalls.pop()
+
+          floatingTexts.push(
+            new FloatingText(
+              width / 2,
+              height / 2,
+              random(comboTexts),
+              Koji.config.colors.floatingTextColor,
+              objSize * floatingTextSize
+            )
+          )
+
           addScore(
             1,
             imgLife,
@@ -83,10 +106,20 @@ function gamePlay() {
               y: firedBall.body.position.y,
             },
             10,
-            { floatingText: false }
+            { floatingText: isMobileSize }
           )
         } else {
           firedBalls.pop()
+
+          floatingTexts.push(
+            new FloatingText(
+              width / 2,
+              height / 2,
+              Koji.config.strings.wrongCrushText,
+              Koji.config.colors.negativeFloatingTextColor,
+              objSize * floatingTextSize
+            )
+          )
 
           particlesEffect(
             imgBalls[firedBall.settings.type],
@@ -102,6 +135,29 @@ function gamePlay() {
           } else {
             loseLife()
           }
+        }
+      }
+    })
+  })
+
+  // For particle type effect
+  wheels.forEach(wheel => {
+    particledBalls.forEach(particledBall => {
+      if (
+        wheel.didTouch({
+          sizing: { radius: particledBall.sizing.radius },
+          body: particledBall.body,
+        })
+      ) {
+        if (wheel.settings.type === particledBall.settings.type) {
+          particlesEffect(
+            imgLife,
+            {
+              x: particledBall.body.position.x,
+              y: particledBall.body.position.y,
+            },
+            10
+          )
         }
       }
     })
