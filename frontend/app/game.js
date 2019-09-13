@@ -23,10 +23,34 @@ function gamePlay() {
     drawTimer()
   }
 
+  // Spawn a ball every second
+  ;(() => {
+    ballTimer += 1 / frameRate()
+    if (ballTimer >= 1.5) {
+      balls.push(
+        new Ball(
+          {
+            x: width / 2,
+            y: 0 - objSize * 2,
+          },
+          { radius: objSize * ballSize },
+          { shape: 'circle', image: random(ballTypes).image, rotate: true }
+        )
+      )
+
+      ballTimer = 0
+    }
+  })()
+
   // InGame UI
   wheels.forEach(wheel => {
     wheel.show()
     wheel.rotate()
+  })
+
+  balls.forEach(ball => {
+    ball.show()
+    ball.update()
   })
 
   // Score draw

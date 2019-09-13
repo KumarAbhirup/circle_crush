@@ -22,7 +22,9 @@ let wheels = []
 let balls = []
 
 // Game Stuffs (READ-N-WRITE)
+let ballTypes = []
 let wheelSize
+let ballSize
 
 // Buttons
 let playButton
@@ -61,12 +63,14 @@ let canMute = true
 let soundImage
 let muteImage
 
-// Timer
+// Timers
 let startingGameTimer
 let gameTimer
 let gameTimerEnabled = false
-let gameOverRectangleHeight = 0 // for game over animation
 
+let ballTimer = 0
+
+let gameOverRectangleHeight = 0 // for game over animation
 let canScore = false
 
 // Size stuff
@@ -163,6 +167,24 @@ function instantiate() {
     { radius: objSize * wheelSize },
     { shape: 'circle', image: imgWheels[1], rotate: true }
   )
+
+  ballTypes = [
+    {
+      type: 0,
+      image: imgBalls[0],
+    },
+    {
+      type: 1,
+      image: imgBalls[1],
+    },
+    {
+      type: 2,
+      image: imgBalls[2],
+    },
+  ]
+
+  // Set ball size
+  ballSize = isMobileSize ? 1 : 1.5
 }
 
 // Setup your props
@@ -260,10 +282,17 @@ function windowResized() {
 
   // Size and Position settings
   wheelSize = isMobileSize ? 4 : 7
+  ballSize = isMobileSize ? 1 : 1.5
+
   wheels[0].body.position.x = 0
   wheels[0].sizing.radius = objSize * wheelSize
   wheels[1].body.position.x = width
   wheels[1].sizing.radius = objSize * wheelSize
+
+  balls.forEach(ball => {
+    ball.sizing.radius = objSize * ballSize
+    ball.body.position.x = width / 2
+  })
 
   // handleResize() // 👈 create this function for advanced resize handling
 }
@@ -273,10 +302,15 @@ function windowResized() {
  * A good practive would be for objects to have a boolean like removable, and here you would go through all objects and remove them if they have removable = true;
  */
 function cleanup() {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < floatingTexts.length; i++) {
+  for (let i = 0; i < floatingTexts.length; i += 1) {
     if (floatingTexts[i].timer <= 0) {
       floatingTexts.splice(i, 1)
+    }
+  }
+
+  for (let i = 0; i < balls.length; i += 1) {
+    if (balls[i].removable) {
+      balls.splice(i, 1)
     }
   }
 }
