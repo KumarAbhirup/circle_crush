@@ -223,7 +223,7 @@ function setup() {
 
   hammer = new Hammer(document.body, { preventDefault: false })
   hammer.get('swipe').set({
-    direction: Hammer.DIRECTION_ALL,
+    direction: Hammer.DIRECTION_HORIZONTAL,
   })
 
   instantiate()
