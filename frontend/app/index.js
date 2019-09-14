@@ -90,6 +90,7 @@ const gameSize = 18
 let isMobile = false // check if it really is mobile
 let isMobileSize = false // check if the browser is mobile size
 let touching = false // Whether the user is currently touching/clicking
+let isTouchEnded = false
 
 let hammer // hammer.js
 
@@ -379,6 +380,7 @@ function touchEnded() {
   }
 
   touching = false
+  isTouchEnded = true
 }
 
 // Key pressed and released

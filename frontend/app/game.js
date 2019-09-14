@@ -75,11 +75,15 @@ function gamePlay() {
 
   // Swipe Detector
   hammer.on('swipe', event => {
-    if (!canEnd && balls.length > 0 && isMobile) {
-      if (event.direction === 4) {
-        balls[0].fire('right')
-      } else if (event.direction === 2) {
-        balls[0].fire('left')
+    if (isTouchEnded) {
+      if (!canEnd && balls.length > 0 && isMobile) {
+        if (event.direction === 4) {
+          balls[0].fire('right')
+        } else if (event.direction === 2) {
+          balls[0].fire('left')
+        }
+
+        isTouchEnded = false
       }
     }
   })
@@ -139,7 +143,7 @@ function gamePlay() {
               x: firedBall.body.position.x,
               y: firedBall.body.position.y,
             },
-            20
+            isMobile ? 10 : 20
           )
 
           if (lives === 1) {
