@@ -1,9 +1,9 @@
 {
   "images": {
-    "wheelImage1": "https://i.imgur.com/Ptuivh6.png",
-    "wheelImage2": "https://i.ibb.co/gdrwB1r/Ptuivh6.png",
-    "ballImage1": "https://i.imgur.com/Ptuivh6.png",
-    "ballImage2": "https://i.ibb.co/gdrwB1r/Ptuivh6.png",
+    "wheelImage1": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/8d9525da0d7c4698b2933b977ecd87da.png",
+    "wheelImage2": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/star.png",
+    "ballImage1": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/8d9525da0d7c4698b2933b977ecd87da.png",
+    "ballImage2": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/star.png",
     "ballImage3": "https://i.ibb.co/WHP4X2N/Ptuivh6.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
@@ -23,65 +23,68 @@
     "enemy5": "https://i.imgur.com/IaI0zLb.png",
     "enemy6": "https://i.imgur.com/tFhnq93.png"
   },
-  "@@editor": [{
-    "key": "images",
-    "name": "Images",
-    "icon": "💪🏻",
-    "source": "images.json",
-    "fields": [{
-        "key": "wheelImage1",
-        "name": "Wheel Image 1",
-        "description": "Ideal size: 100x100",
-        "type": "image"
-      },
-      {
-        "key": "wheelImage2",
-        "name": "Wheel Image 2",
-        "description": "Ideal size: 100x100",
-        "type": "image"
-      },
-      {
-        "key": "ballImage1",
-        "name": "Ball Image 1",
-        "description": "Ideal size: 100x100",
-        "type": "image"
-      },
-      {
-        "key": "ballImage2",
-        "name": "Ball Image 2",
-        "description": "Ideal size: 100x100",
-        "type": "image"
-      },
-      {
-        "key": "ballImage3",
-        "name": "Ball Image 3",
-        "description": "Ideal size: 100x100",
-        "type": "image"
-      },
-      {
-        "key": "soundImage",
-        "name": "Sound Icon",
-        "description": "Ideal size: 32x32",
-        "type": "image"
-      },
-      {
-        "key": "muteImage",
-        "name": "Mute Icon",
-        "description": "Ideal size: 32x32",
-        "type": "image"
-      },
-      {
-        "key": "lifeIcon",
-        "name": "Life Icon",
-        "description": "Ideal size: 96x96",
-        "type": "image"
-      },
-      {
-        "key": "background",
-        "name": "Background",
-        "description": "Leave empty if you want to use a solid color. Ideal size: any, but keep in mind it could deform based on screen size",
-        "type": "image"
-      }
-    ]
-  }]
+  "@@editor": [
+    {
+      "key": "images",
+      "name": "Images",
+      "icon": "💪🏻",
+      "source": "images.json",
+      "fields": [
+        {
+          "key": "wheelImage1",
+          "name": "Wheel Image 1",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "wheelImage2",
+          "name": "Wheel Image 2",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "ballImage1",
+          "name": "Ball Image 1",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "ballImage2",
+          "name": "Ball Image 2",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "ballImage3",
+          "name": "Ball Image 3",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "soundImage",
+          "name": "Sound Icon",
+          "description": "Ideal size: 32x32",
+          "type": "image"
+        },
+        {
+          "key": "muteImage",
+          "name": "Mute Icon",
+          "description": "Ideal size: 32x32",
+          "type": "image"
+        },
+        {
+          "key": "lifeIcon",
+          "name": "Life Icon",
+          "description": "Ideal size: 96x96",
+          "type": "image"
+        },
+        {
+          "key": "background",
+          "name": "Background",
+          "description": "Leave empty if you want to use a solid color. Ideal size: any, but keep in mind it could deform based on screen size",
+          "type": "image"
+        }
+      ]
+    }
+  ]
 }
