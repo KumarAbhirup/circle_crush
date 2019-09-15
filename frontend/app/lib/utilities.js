@@ -164,3 +164,23 @@ function detectMobile() {
 function detectMobileSize() {
   return width < 550
 }
+
+// Returns true if the user is on Apple Device
+function detectiOS() {
+   let iDevices = [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ];
+
+  if (!!navigator.platform) {
+    while (iDevices.length) {
+      if (navigator.platform === iDevices.pop()){ return true }
+    }
+  }
+
+  return false
+}

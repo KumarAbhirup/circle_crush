@@ -91,6 +91,7 @@ let isMobile = false // check if it really is mobile
 let isMobileSize = false // check if the browser is mobile size
 let touching = false // Whether the user is currently touching/clicking
 let isTouchEnded = false
+let isiOS = false
 
 let hammer // hammer.js
 
@@ -213,6 +214,7 @@ function setup() {
 
   isMobile = detectMobile()
   isMobileSize = detectMobileSize()
+  isiOS = detectiOS()
 
   textFont(myFont) // set our font
   document.body.style.fontFamily = myFont
@@ -270,42 +272,44 @@ function draw() {
 }
 
 // Handle Canvas Resize
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight)
+if (!isiOS) {
+    function windowResized() {
+        resizeCanvas(windowWidth, windowHeight)
 
-  width = window.innerWidth
-  height = window.innerHeight
+        width = window.innerWidth
+        height = window.innerHeight
 
-  // How much of the screen should the game take, this should usually be left as it is
-  let sizeModifier = 0.75
-  if (height > width) {
-    sizeModifier = 1
-  }
+        // How much of the screen should the game take, this should usually be left as it is
+        let sizeModifier = 0.75
+        if (height > width) {
+            sizeModifier = 1
+        }
 
-  // Magically determine basic object size depending on size of the screen
-  objSize = floor(
-    min(floor(width / gameSize), floor(height / gameSize)) * sizeModifier
-  )
+        // Magically determine basic object size depending on size of the screen
+        objSize = floor(
+            min(floor(width / gameSize), floor(height / gameSize)) * sizeModifier
+        )
 
-  soundButton.size = createVector(objSize, objSize)
+        soundButton.size = createVector(objSize, objSize)
 
-  isMobileSize = detectMobileSize()
+        isMobileSize = detectMobileSize()
 
-  // Size and Position settings
-  wheelSize = isMobileSize ? 4 : 7
-  ballSize = isMobileSize ? 1 : 1.5
+        // Size and Position settings
+        wheelSize = isMobileSize ? 4 : 7
+        ballSize = isMobileSize ? 1 : 1.5
 
-  wheels[0].body.position.x = 0
-  wheels[0].sizing.radius = objSize * wheelSize
-  wheels[1].body.position.x = width
-  wheels[1].sizing.radius = objSize * wheelSize
+        wheels[0].body.position.x = 0
+        wheels[0].sizing.radius = objSize * wheelSize
+        wheels[1].body.position.x = width
+        wheels[1].sizing.radius = objSize * wheelSize
 
-  balls.forEach(ball => {
-    ball.sizing.radius = objSize * ballSize
-    ball.body.position.x = width / 2
-  })
+        balls.forEach(ball => {
+            ball.sizing.radius = objSize * ballSize
+            ball.body.position.x = width / 2
+        })
 
-  // handleResize() // 👈 create this function for advanced resize handling
+        // handleResize() // 👈 create this function for advanced resize handling
+    }
 }
 
 /**
