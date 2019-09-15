@@ -1,13 +1,13 @@
 {
   "strings": {
     "fontFamily": "https://fonts.googleapis.com/css?family=Lilita+One",
-    "title": "Circle Crush!",
-    "desktop_instructions1": "Crush the circles to the wheels of their color!",
-    "desktop_instructions2": "For the one that got no wheel, let it go!",
-    "desktop_instructions3": "Press arrow keys for firing circles.",
-    "mobile_instructions1": "Crush the circles with the wheels of their color!",
-    "mobile_instructions2": "For the one that got no wheel, let it go!",
-    "mobile_instructions3": "Swipe left/right to crush it in correct wheel!",
+    "title": "Star Crush ⭐",
+    "desktop_instructions1": "Separate the stars into their matching stars!",
+    "desktop_instructions2": "Let the grenade go fall away!",
+    "desktop_instructions3": "Press arrow keys for shooting stars.",
+    "mobile_instructions1": "Separate the stars into their matching stars!",
+    "mobile_instructions2": "Let the grenade go fall away!",
+    "mobile_instructions3": "Swipe left/right for shooting stars.",
     "lives": "3",
     "minimumScoreToSave": "3",
     "enableCursor": true,
@@ -26,148 +26,151 @@
     "highscoreGainedText": "New High Score!",
     "trialTesting": false
   },
-  "@@editor": [{
-    "key": "strings",
-    "name": "Game Settings",
-    "icon": "💡",
-    "source": "strings.json",
-    "fields": [{
-        "key": "fontFamily",
-        "name": "Font Family",
-        "description": "Google fonts link to font to use in the game",
-        "type": "text"
-      },
-      {
-        "key": "title",
-        "name": "Game Title",
-        "description": "The title that is displayed in the start menu",
-        "type": "text"
-      },
-      {
-        "key": "desktop_instructions1",
-        "name": "Desktop Game Instructions 1",
-        "type": "text"
-      },
-      {
-        "key": "desktop_instructions2",
-        "name": "Desktop Game Instructions 2",
-        "type": "text"
-      },
-      {
-        "key": "desktop_instructions3",
-        "name": "Desktop Game Instructions 3",
-        "type": "text"
-      },
-      {
-        "key": "mobile_instructions1",
-        "name": "Mobile Game Instructions 1",
-        "type": "text"
-      },
-      {
-        "key": "mobile_instructions2",
-        "name": "Mobile Game Instructions 2",
-        "type": "text"
-      },
-      {
-        "key": "mobile_instructions3",
-        "name": "Mobile Game Instructions 3",
-        "type": "text"
-      },
-      {
-        "key": "lives",
-        "name": "Starting Lives",
-        "description": "How many lives you initially have",
-        "type": "text"
-      },
-      {
-        "key": "minimumScoreToSave",
-        "name": "Minimum Score to Save",
-        "description": "Minimum score needed for user to save his/her name in Leaderboard.",
-        "type": "text"
-      },
-      {
-        "key": "enableCursor",
-        "name": "Enable Cursor",
-        "description": "Do you want the game to have cursor when game starts?",
-        "type": "boolean"
-      },
-      {
-        "key": "enableTimer",
-        "name": "Enable Game Timer",
-        "description": "Disable if you don't want game to have a timer.",
-        "type": "boolean"
-      },
-      {
-        "key": "gameTimer",
-        "name": "Game Timer",
-        "description": "How many seconds before game should over?",
-        "type": "text"
-      },
-      {
-        "key": "playButtonText",
-        "name": "Play Button Text",
-        "description": "Label on the Play Button",
-        "type": "text"
-      },
-      {
-        "key": "leaderboardButtonText",
-        "name": "Leaderboard Button Text",
-        "description": "Label on the Leaderboard Button",
-        "type": "text"
-      },
-      {
-        "key": "endButtonText",
-        "name": "End Button Text",
-        "description": "Label on the End Button",
-        "type": "text"
-      },
-      {
-        "key": "gameOverText",
-        "name": "Game Over Text",
-        "type": "text"
-      },
-      {
-        "key": "gameStartedFloatingText",
-        "name": "Game Started Text",
-        "description": "The floating text that appears after game starts.",
-        "type": "text"
-      },
-      {
-        "key": "wrongCrushText",
-        "name": "Wrong match/crush text",
-        "description": "The floating text that appears after crushing ball to wrong wheel.",
-        "type": "text"
-      },
-      {
-        "key": "comboText",
-        "name": "Success Texts",
-        "description": "Appreiciating texts that appear after some success.",
-        "type": "text"
-      },
-      {
-        "key": "emailInputEnabled",
-        "name": "Enable E-Mail Input",
-        "description": "Enable/Disable E-Mail input while submitting score.",
-        "type": "boolean"
-      },
-      {
-        "key": "scoreText",
-        "name": "Score Text",
-        "description": "Default: 'Score:'",
-        "type": "text"
-      },
-      {
-        "key": "highscoreText",
-        "name": "High Score Text",
-        "description": "Default: 'High Score:'",
-        "type": "text"
-      },
-      {
-        "key": "highscoreGainedText",
-        "name": "High Score Gained Text",
-        "description": "When you get a new high score",
-        "type": "text"
-      }
-    ]
-  }]
+  "@@editor": [
+    {
+      "key": "strings",
+      "name": "Game Settings",
+      "icon": "💡",
+      "source": "strings.json",
+      "fields": [
+        {
+          "key": "fontFamily",
+          "name": "Font Family",
+          "description": "Google fonts link to font to use in the game",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "name": "Game Title",
+          "description": "The title that is displayed in the start menu",
+          "type": "text"
+        },
+        {
+          "key": "desktop_instructions1",
+          "name": "Desktop Game Instructions 1",
+          "type": "text"
+        },
+        {
+          "key": "desktop_instructions2",
+          "name": "Desktop Game Instructions 2",
+          "type": "text"
+        },
+        {
+          "key": "desktop_instructions3",
+          "name": "Desktop Game Instructions 3",
+          "type": "text"
+        },
+        {
+          "key": "mobile_instructions1",
+          "name": "Mobile Game Instructions 1",
+          "type": "text"
+        },
+        {
+          "key": "mobile_instructions2",
+          "name": "Mobile Game Instructions 2",
+          "type": "text"
+        },
+        {
+          "key": "mobile_instructions3",
+          "name": "Mobile Game Instructions 3",
+          "type": "text"
+        },
+        {
+          "key": "lives",
+          "name": "Starting Lives",
+          "description": "How many lives you initially have",
+          "type": "text"
+        },
+        {
+          "key": "minimumScoreToSave",
+          "name": "Minimum Score to Save",
+          "description": "Minimum score needed for user to save his/her name in Leaderboard.",
+          "type": "text"
+        },
+        {
+          "key": "enableCursor",
+          "name": "Enable Cursor",
+          "description": "Do you want the game to have cursor when game starts?",
+          "type": "boolean"
+        },
+        {
+          "key": "enableTimer",
+          "name": "Enable Game Timer",
+          "description": "Disable if you don't want game to have a timer.",
+          "type": "boolean"
+        },
+        {
+          "key": "gameTimer",
+          "name": "Game Timer",
+          "description": "How many seconds before game should over?",
+          "type": "text"
+        },
+        {
+          "key": "playButtonText",
+          "name": "Play Button Text",
+          "description": "Label on the Play Button",
+          "type": "text"
+        },
+        {
+          "key": "leaderboardButtonText",
+          "name": "Leaderboard Button Text",
+          "description": "Label on the Leaderboard Button",
+          "type": "text"
+        },
+        {
+          "key": "endButtonText",
+          "name": "End Button Text",
+          "description": "Label on the End Button",
+          "type": "text"
+        },
+        {
+          "key": "gameOverText",
+          "name": "Game Over Text",
+          "type": "text"
+        },
+        {
+          "key": "gameStartedFloatingText",
+          "name": "Game Started Text",
+          "description": "The floating text that appears after game starts.",
+          "type": "text"
+        },
+        {
+          "key": "wrongCrushText",
+          "name": "Wrong match/crush text",
+          "description": "The floating text that appears after crushing ball to wrong wheel.",
+          "type": "text"
+        },
+        {
+          "key": "comboText",
+          "name": "Success Texts",
+          "description": "Appreiciating texts that appear after some success.",
+          "type": "text"
+        },
+        {
+          "key": "emailInputEnabled",
+          "name": "Enable E-Mail Input",
+          "description": "Enable/Disable E-Mail input while submitting score.",
+          "type": "boolean"
+        },
+        {
+          "key": "scoreText",
+          "name": "Score Text",
+          "description": "Default: 'Score:'",
+          "type": "text"
+        },
+        {
+          "key": "highscoreText",
+          "name": "High Score Text",
+          "description": "Default: 'High Score:'",
+          "type": "text"
+        },
+        {
+          "key": "highscoreGainedText",
+          "name": "High Score Gained Text",
+          "description": "When you get a new high score",
+          "type": "text"
+        }
+      ]
+    }
+  ]
 }

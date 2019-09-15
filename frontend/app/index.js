@@ -161,7 +161,7 @@ function instantiate() {
   wheels[0] = new GameObject(
     {
       x: 0,
-      y: height / 2,
+      y: height / 2 + height * 0.07,
     },
     { radius: objSize * wheelSize },
     { shape: 'circle', image: imgWheels[0], rotate: true, type: 0 }
@@ -169,7 +169,7 @@ function instantiate() {
   wheels[1] = new GameObject(
     {
       x: width,
-      y: height / 2,
+      y: height / 2 + height * 0.07,
     },
     { radius: objSize * wheelSize },
     { shape: 'circle', image: imgWheels[1], rotate: true, type: 1 }
